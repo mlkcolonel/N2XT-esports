@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N2XT · Roster</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Orbitron & Rajdhani kept for sharp esports look, colours fully replaced by black/red -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== N2XT ESPORTS THEME - BLACK/RED (FULL CONVERSION) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black-100: #000000;
+            --black-90:  #0a0a0a;
+            --black-80:  #111111;
+            --black-70:  #1a1a1a;
+            --black-60:  #222222;
+            --black-50:  #2a2a2a;
+            --red-100: #ff0000;
+            --red-90:  #e10600;
+            --red-80:  #ff1a1a;
+            --red-70:  #ff3333;
+            --red-60:  #ff4d4d;
+            --red-50:  #ff6666;
+            --accent-dark: #330000;
+            --bg-dark: var(--black-90);
+            --card-bg: var(--black-60);
+            --border-red: rgba(225, 6, 0, 0.3);
+            --glow-red: 0 0 12px rgba(225, 6, 0, 0.7);
+            --text-light: #ffffff;
+            --text-dim: #cccccc;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--black-90);
+            color: var(--text-light);
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 70% 10%, rgba(225,6,0,0.02) 0%, transparent 30%);
+        }
+
+        .main-nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--red-90);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 8px rgba(225,6,0,0.5);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            color: var(--red-90);
+            font-size: 2rem;
+        }
+
+        .logo-red {
+            color: var(--red-90);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: #cccccc;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link.active, .nav-link:hover {
+            color: var(--red-90);
+            border-bottom-color: var(--red-90);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            padding: 4rem 1rem 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #000000 0%, #1a0000 100%);
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--red-90), transparent);
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(225, 6, 0, 0.7);
+            color: white;
+        }
+
+        .text-red {
+            color: var(--red-90);
+        }
+
+        .hero-subtitle {
+            color: #f0f0f0;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 1rem auto;
+            font-weight: 400;
+        }
+
+        .team-logo-container img {
+            max-height: 110px;
+            opacity: 0.95;
+            filter: drop-shadow(0 0 8px #e10600);
+        }
+
+        .section {
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .game-filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--red-90);
+            color: #eee;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            padding: 0.7rem 2rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--red-90);
+            color: #000000;
+            border-color: var(--red-90);
+            box-shadow: 0 0 20px var(--red-90);
+            font-weight: 700;
+        }
+
+        .players-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .player-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid rgba(225, 6, 0, 0.25);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+            height: 100%;
+            min-height: 420px;
+        }
+
+        .player-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(225, 6, 0, 0.5);
+            border-color: var(--red-80);
+        }
+
+        .player-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 3px solid var(--red-90);
+            flex-shrink: 0;
+        }
+
+        .player-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .player-card:hover .player-img {
+            transform: scale(1.05);
+        }
+
+        .player-image .img-fallback {
+            font-size: 3.5rem;
+            color: var(--red-80);
+            text-shadow: 2px 2px 0 #330000;
+        }
+
+        .player-content {
+            padding: 0 1rem 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .player-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            margin: 0.8rem 0 0.2rem;
+            color: white;
+            text-shadow: 0 0 6px rgba(225,6,0,0.5);
+            letter-spacing: 1px;
+        }
+
+        .player-role {
+            color: var(--red-80);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .extra-meta {
+            background: rgba(225, 6, 0, 0.12);
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(225,6,0,0.3);
+            color: #ffcaca;
+            font-weight: 500;
+        }
+
+        .player-detail {
+            display: none;
+        }
+
+        .player-social {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 0.8rem;
+            padding-top: 0.5rem;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+
+        .player-social a {
+            color: #ffffff;
+            background: rgba(225, 6, 0, 0.2);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            border: 1px solid rgba(225,6,0,0.5);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .player-social a:hover {
+            background: var(--red-90);
+            color: #000;
+            transform: scale(1.1);
+            border-color: var(--red-100);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-shadow: 0 0 8px var(--red-90);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 4px;
+            background: var(--red-90);
+            margin: 0.5rem auto 0;
+            box-shadow: 0 0 12px red;
+        }
+
+        .main-footer {
+            background: #050000;
+            padding: 3rem 2rem 1rem;
+            border-top: 2px solid var(--red-90);
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            color: #cccccc;
+        }
+
+        .footer-col h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--red-80);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--red-90);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            color: var(--red-90);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(225,6,0,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #888;
+        }
+
+        .footer-partners span {
+            margin-right: 1rem;
+            color: #bbb;
+        }
+
+        .badge-primary {
+            background: rgba(225,6,0,0.2);
+            color: #ff8080;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            border: 1px solid var(--red-90);
+        }
+
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .players-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .players-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.98);
+                position: absolute;
+                top: 70px;
+                left: 0;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                border-bottom: 2px solid var(--red-90);
+                backdrop-filter: blur(10px);
+            }
+            .nav-menu.show {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                <span>N<span class="logo-red">2</span>XT</span>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="roster.html" class="nav-link active">
+                    <i class="fas fa-users"></i>
+                    <span>Team</span>
+                </a>
+                <a href="join.html" class="nav-link">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Join</span>
+                </a>
+                <a href="shop.html" class="nav-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Shop</span>
+                </a>
+                <a href="games.html" class="nav-link">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Games</span>
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">TEAM <span class="text-red">N2XT</span></h1>
+            <p class="hero-subtitle">Next Generation Esports</p>
+            <div class="team-logo-container">
+                <img src="N2XTlogo.png" alt="N2XT Logo" style="max-height: 120px;" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <div class="game-filter">
+                    <button class="filter-btn active" data-filter="all">All Members</button>
+                    <button class="filter-btn" data-filter="RocketLeague">Rocket League</button>
+                    <button class="filter-btn" data-filter="Valorant">Valorant</button>
+                    <button class="filter-btn" data-filter="eFootball">eFootball</button>
+                    <button class="filter-btn" data-filter="VFX">VFX</button>
+                </div>
+            </div>
+
+            <div class="players-grid">
+
+                <!-- SOUKA - RL PLAYER -->
+                <div class="player-card" data-filter="RocketLeague">
+                    <div class="player-image">
+                        <img class="player-img" src="tunisia.jpg" alt="Wathek Merthi" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>SOUKA</h3>
+                        <div class="player-role">RL PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-futbol"></i> Wathek Merthi</div>
+                    </div>
+                </div>
+
+                <!-- MOUADH - RL PLAYER -->
+                <div class="player-card" data-filter="RocketLeague">
+                    <div class="player-image">
+                        <img class="player-img" src="tunisia.jpg" alt="Mouadh Bawweb" onerror="this.parentElement.innerHTML='<i class=\'fas fa-skull img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>MOUADH</h3>
+                        <div class="player-role">RL PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-futbol"></i> Mouadh Bawweb</div>
+                    </div>
+                </div>
+
+                <!-- AYMEN - RL PLAYER -->
+                <div class="player-card" data-filter="RocketLeague">
+                    <div class="player-image">
+                        <img class="player-img" src="algeria.png" alt="Aymen Mohamed" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>AYMEN</h3>
+                        <div class="player-role">RL PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-futbol"></i> Aymen Mohamed</div>
+                        <div class="player-social">
+                            <a href="https://www.tiktok.com/@aymenc00?is_from_webapp=1&sender_device=pc" target="_blank">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SIZKY - RL PLAYER -->
+                <div class="player-card" data-filter="RocketLeague">
+                    <div class="player-image">
+                        <img class="player-img" src="algeria.png" alt="SIZKY" onerror="this.parentElement.innerHTML='<i class=\'fas fa-rocket img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>SIZKY</h3>
+                        <div class="player-role">RL PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-futbol"></i> Sizky</div>
+                        <div class="player-social">
+                            <a href="https://www.tiktok.com/@sizkyyy?is_from_webapp=1&sender_device=pc" target="_blank">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JESSE - VALO PLAYER -->
+                <div class="player-card" data-filter="Valorant">
+                    <div class="player-image">
+                        <img class="player-img" src="tunisia.jpg" alt="Ahmed Cherif" onerror="this.parentElement.innerHTML='<i class=\'fas fa-bolt img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>JESSE</h3>
+                        <div class="player-role">VALO PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-crosshairs"></i> Ahmed Cherif</div>
+                        <div class="player-social">
+                            <a href="https://www.youtube.com/@Jesse-Urpear" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://www.twitch.tv/urjesse" target="_blank">
+                                <i class="fab fa-twitch"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RYZEN - eFootball -->
+                <div class="player-card" data-filter="eFootball">
+                    <div class="player-image">
+                        <img class="player-img" src="tunisia.jpg" alt="Adem Maamouri" onerror="this.parentElement.innerHTML='<i class=\'fas fa-futbol img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>RYZEN</h3>
+                        <div class="player-role">eFootball PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-star"></i> Adem Maamouri</div>
+                        <div class="player-social">
+                            <a href="https://www.tiktok.com/@gfxryzen" target="_blank">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAN - RL PLAYER -->
+                <div class="player-card" data-filter="RocketLeague">
+                    <div class="player-image">
+                        <img class="player-img" src="tunisia.jpg" alt="Khalil Aljane" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>BAN</h3>
+                        <div class="player-role">RL PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-futbol"></i> Khalil Aljane</div>
+                        <div class="player-social">
+                            <a href="https://www.tiktok.com/@ban.rl2" target="_blank">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V3IL - VFX -->
+                <div class="player-card" data-filter="VFX">
+                    <div class="player-image">
+                        <img class="player-img" src="Oman.webp" alt="Youssef" onerror="this.parentElement.innerHTML='<i class=\'fas fa-video img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>V3IL</h3>
+                        <div class="player-role">VFX ARTIST</div>
+                        <div class="extra-meta"><i class="fas fa-film"></i> Youssef</div>
+                        <div class="player-social">
+                            <a href="https://www.tiktok.com/@v3il_rl?is_from_webapp=1&sender_device=pc" target="_blank">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENVY - RL PLAYER -->
+                <div class="player-card" data-filter="RocketLeague">
+                    <div class="player-image">
+                        <img class="player-img" src="tunisia.jpg" alt="Oussema bel haj kassem" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>ENVY</h3>
+                        <div class="player-role">RL PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-futbol"></i> Oussema bel haj kassem</div>
+                        <div class="player-social">
+                            <a href="https://www.tiktok.com/@oussema.bhk" target="_blank">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@envyrl0" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ZORO - RL PLAYER -->
+                <div class="player-card" data-filter="RocketLeague">
+                    <div class="player-image">
+                        <img class="player-img" src="tunisia.jpg" alt="ZORO" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>ZORO</h3>
+                        <div class="player-role">RL PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-futbol"></i> Mehdi Hameda</div>
+                        <div class="player-social">
+                            <a href="https://www.tiktok.com/@n2xt_zoro" target="_blank">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lou4ti - RL PLAYER -->
+                <div class="player-card" data-filter="RocketLeague">
+                    <div class="player-image">
+                        <img class="player-img" src="tunisia.jpg" alt="Mohamed Louati" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>Lou4ti</h3>
+                        <div class="player-role">RL PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-futbol"></i> Mohamed Louati</div>
+                        <div class="player-social">
+                            <a href="https://www.tiktok.com/@samalapa.rl" target="_blank">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SULTAN - RL PLAYER -->
+                <div class="player-card" data-filter="RocketLeague">
+                    <div class="player-image">
+                        <img class="player-img" src="arabia.webp" alt="SULTAN" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>SULTAN</h3>
+                        <div class="player-role">RL PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-futbol"></i> Sultan</div>
+                    </div>
+                </div>
+
+                <!-- 3CHIRI - eFootball PLAYER -->
+                <div class="player-card" data-filter="eFootball">
+                    <div class="player-image">
+                        <img class="player-img" src="tunisia.jpg" alt="Youssef Achiri" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>3CHIRI</h3>
+                        <div class="player-role">eFootball PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-star"></i> Youssef Achiri</div>
+                    </div>
+                </div>
+
+                <!-- MSBOOST - VALO PLAYER -->
+                <div class="player-card" data-filter="Valorant">
+                    <div class="player-image">
+                        <img class="player-img" src="tunisia.jpg" alt="Yassine Bejaoui" onerror="this.parentElement.innerHTML='<i class=\'fas fa-bolt img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>MSBOOST</h3>
+                        <div class="player-role">VALO PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-crosshairs"></i> Yassine Bejaoui</div>
+                    </div>
+                </div>
+
+                <!-- N1GHTER - VALO PLAYER -->
+                <div class="player-card" data-filter="Valorant">
+                    <div class="player-image">
+                        <img class="player-img" src="Turkey.png" alt="N1GHTER" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>N1GHTER</h3>
+                        <div class="player-role">VALO PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-crosshairs"></i> ata sevinc</div>
+                        <div class="player-social">
+                            <a href="https://www.tiktok.com/@nighterfpz" target="_blank">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLADE - VALO PLAYER -->
+                <div class="player-card" data-filter="Valorant">
+                    <div class="player-image">
+                        <img class="player-img" src="Germany.png" alt="BLADE" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crosshairs img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>BLADE</h3>
+                        <div class="player-role">VALO PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-crosshairs"></i> BLADE</div>
+                    </div>
+                </div>
+
+                <!-- DRAGO - VALO PLAYER -->
+                <div class="player-card" data-filter="Valorant">
+                    <div class="player-image">
+                        <img class="player-img" src="England.png" alt="DRAGO" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crosshairs img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>DRAGO</h3>
+                        <div class="player-role">VALO PLAYER</div>
+                        <div class="extra-meta"><i class="fas fa-crosshairs"></i> DRAGO</div>
+                    </div>
+                </div>
+
+                <!-- VFX MEMBER: CHBAYA7 - VFX ARTIST -->
+                <div class="player-card" data-filter="VFX">
+                    <div class="player-image">
+                        <img class="player-img" src="tunisia.jpg" alt="CHBAYA7" onerror="this.parentElement.innerHTML='<i class=\'fas fa-magic img-fallback\'></i>'">
+                    </div>
+                    <div class="player-content">
+                        <h3>CHBAYA7</h3>
+                        <div class="player-role">VFX ARTIST</div>
+                        <div class="extra-meta"><i class="fas fa-film"></i> CHBAYA7</div>
+                        <div class="player-social">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>N2XT Esports</h3>
+                <p>next generation.</p>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@n2xt.esports.officiel?_r=1&_t=ZS-946TliUThZt" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://x.com/N2XTesports" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/n2xt.esports?igsh=MXZ1aTNtYzdqcTVzZg==" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@n2xt.esports?si=N1YOvna_wObVAomg" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://discord.gg/25gYPdre9q" class="social-link" target="_blank"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links"><li><a href="#">Roster</a></li><li><a href="#">Join</a></li><li><a href="#">Shop</a></li></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Support</h3>
+                <ul class="footer-links"><li><a href="https://discord.gg/25gYPdre9q" target="_blank">Contact</a></li></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <form><input type="email" placeholder="your@email.com" style="background:#222; border:1px solid #e10600; padding:0.7rem; border-radius:30px; width:100%; color:white;"></form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 N2XT · all rights reserved</p>
+            <div class="footer-partners"><span class="badge-primary">DEFENDR</span> <span class="badge-primary">KAIL store</span> <span class="badge-primary">N2XT</span></div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.player-card');
+
+            function applyFilter(filterValue) {
+                cards.forEach(card => {
+                    const cardFilter = card.getAttribute('data-filter');
+                    if (filterValue === 'all' || cardFilter === filterValue) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(15px)';
+                        setTimeout(() => card.style.display = 'none', 200);
+                    }
+                });
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    applyFilter(filter);
+                });
+            });
+
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('show');
+                });
+                
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('show');
+                    });
+                });
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.player-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease-out';
+                observer.observe(el);
+            });
+            
+            applyFilter('all');
+        });
+    </script>
+    <style>
+        .nav-logo, .nav-link.active, .nav-link:hover, .text-red, .filter-btn.active, .filter-btn:hover,
+        .player-card h3, .section-title, .footer-col h3, .badge-primary {
+            text-shadow: 0 0 5px #e10600;
+        }
+        .player-image i, .extra-meta i {
+            color: #ff6666;
+        }
+        .player-role {
+            color: #ff4d4d;
+        }
+        .player-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .img-fallback {
+            font-size: 3.5rem;
+            color: var(--red-80);
+        }
+        .player-detail {
+            display: none;
+        }
+    </style>
+</body>
+</html>

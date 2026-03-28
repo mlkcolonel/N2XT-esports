@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N2XT Esports - The Next Generation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== N2XT ESPORTS THEME - BLACK/RED ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black-100: #000000;
+            --black-90:  #0a0a0a;
+            --black-80:  #111111;
+            --black-70:  #1a1a1a;
+            --black-60:  #222222;
+            --black-50:  #2a2a2a;
+            --red-100: #ff0000;
+            --red-90:  #e10600;
+            --red-80:  #ff1a1a;
+            --red-70:  #ff3333;
+            --red-60:  #ff4d4d;
+            --red-50:  #ff6666;
+            --accent-dark: #330000;
+            --bg-dark: var(--black-90);
+            --card-bg: var(--black-60);
+            --border-red: rgba(225, 6, 0, 0.3);
+            --glow-red: 0 0 12px rgba(225, 6, 0, 0.7);
+            --text-light: #ffffff;
+            --text-dim: #cccccc;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--black-90);
+            color: var(--text-light);
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 70% 10%, rgba(225,6,0,0.02) 0%, transparent 30%);
+        }
+
+        /* ===== UNIFIED NAVIGATION STYLES ===== */
+        .main-nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--red-90);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 8px rgba(225,6,0,0.5);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .nav-logo:hover {
+            text-shadow: 0 0 12px var(--red-90);
+            transform: scale(1.02);
+        }
+
+        .logo-icon {
+            color: var(--red-90);
+            font-size: 2rem;
+        }
+
+        .logo-red {
+            color: var(--red-90);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #cccccc;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            position: relative;
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--red-90);
+            border-bottom-color: var(--red-90);
+        }
+
+        .nav-link:hover i {
+            transform: translateY(-2px);
+            color: var(--red-90);
+        }
+
+        .nav-link.active {
+            color: var(--red-90);
+            border-bottom-color: var(--red-90);
+        }
+
+        .nav-link.active i {
+            color: var(--red-90);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-toggle:hover {
+            color: var(--red-90);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #000000 0%, #1a0000 100%);
+            position: relative;
+            padding: 4rem 1rem;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--red-90), transparent);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(225, 6, 0, 0.7);
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .text-red {
+            color: var(--red-90);
+        }
+
+        .hero-subtitle {
+            color: #f0f0f0;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 2rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 40px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--red-90);
+            color: white;
+            box-shadow: 0 0 10px rgba(225, 6, 0, 0.5);
+        }
+
+        .btn-primary:hover {
+            background: var(--red-80);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(225, 6, 0, 0.8);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--red-90);
+        }
+
+        .btn-secondary:hover {
+            background: var(--red-90);
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(225, 6, 0, 0.5);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 0 8px var(--red-90);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--red-90);
+            margin: 0.5rem auto 0;
+            box-shadow: 0 0 8px red;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-gray {
+            color: #cccccc;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(225, 6, 0, 0.25);
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(225, 6, 0, 0.3);
+            border-color: var(--red-80);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--red-90);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .card p {
+            color: #cccccc;
+            margin-bottom: 1rem;
+        }
+
+        .feature-link {
+            color: var(--red-90);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: #050000;
+            padding: 3rem 2rem 1rem;
+            border-top: 2px solid var(--red-90);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-col h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--red-80);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-col p {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--red-90);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: #ffffff;
+            font-size: 1.3rem;
+            transition: var(--transition);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(225, 6, 0, 0.1);
+            border: 1px solid rgba(225, 6, 0, 0.3);
+        }
+
+        .social-link:hover {
+            color: var(--red-90);
+            transform: translateY(-3px);
+            border-color: var(--red-90);
+        }
+
+        .newsletter-form {
+            margin-top: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--black-70);
+            border: 1px solid rgba(225, 6, 0, 0.3);
+            border-radius: 40px;
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--red-90);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(225, 6, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: #888;
+        }
+
+        .footer-partners {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge-primary {
+            background: rgba(225, 6, 0, 0.2);
+            color: #ff8080;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--red-90);
+        }
+
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.98);
+                position: absolute;
+                top: 70px;
+                left: 0;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                border-bottom: 2px solid var(--red-90);
+                backdrop-filter: blur(10px);
+            }
+            .nav-menu.show {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                <span>N<span class="logo-red">2</span>XT</span>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" id="nav-home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="roster.html" class="nav-link" id="nav-roster">
+                    <i class="fas fa-users"></i>
+                    <span>Team</span>
+                </a>
+                <a href="join.html" class="nav-link" id="nav-join">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Join</span>
+                </a>
+                <a href="shop.html" class="nav-link" id="nav-shop">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Shop</span>
+                </a>
+                <a href="games.html" class="nav-link" id="nav-games">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Games</span>
+                </a>
+                <a href="about.html" class="nav-link" id="nav-about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                WELCOME TO <span class="text-red">N2XT</span> ESPORTS
+            </h1>
+            <p class="hero-subtitle">
+                The next generation of competitive gaming. Dominate with the elite.
+            </p>
+            <div class="hero-actions">
+                <a href="join.html" class="btn btn-primary">
+                    <i class="fas fa-trophy"></i> Join The Team
+                </a>
+                <a href="https://discord.gg/25gYPdre9q" class="btn btn-secondary">
+                    <i class="fas fa-play-circle"></i> Join Our Discord
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Explore N2XT</h2>
+            <p class="text-center text-gray">Discover what makes us the next generation of esports</p>
+            
+            <div class="grid grid-3" style="margin-top: 3rem;">
+                <a href="roster.html" class="card feature">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Elite Roster</h3>
+                    <p>Meet our professional players dominating competitive gaming scenes worldwide.</p>
+                    <div class="feature-link">
+                        <span>View Team <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="join.html" class="card feature">
+                    <div class="card-icon">
+                        <i class="fas fa-sign-in-alt"></i>
+                    </div>
+                    <h3>Join Us</h3>
+                    <p>Apply to join our competitive teams or academy program. Rise to the challenge.</p>
+                    <div class="feature-link">
+                        <span>Apply Now <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="shop.html" class="card feature">
+                    <div class="card-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Pro Shop</h3>
+                    <p>Official jerseys, gaming gear, and limited edition merchandise. Wear your pride.</p>
+                    <div class="feature-link">
+                        <span>Shop Now <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="grid grid-3" style="margin-top: 2rem;">
+                <a href="games.html" class="card feature">
+                    <div class="card-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Our Games</h3>
+                    <p>Competitive titles we dominate and upcoming tournament schedules.</p>
+                    <div class="feature-link">
+                        <span>View Games <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="about.html" class="card feature">
+                    <div class="card-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>About Us</h3>
+                    <p>Our history, mission, and leadership team. Learn what drives N2XT.</p>
+                    <div class="feature-link">
+                        <span>Learn More <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>N2XT Esports</h3>
+                <p>next generation.</p>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@n2xt.esports.officiel?_r=1&_t=ZS-946TliUThZt" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://x.com/N2XTesports" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/n2xt.esports?igsh=MXZ1aTNtYzdqcTVzZg==" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@n2xt.esports?si=N1YOvna_wObVAomg" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://discord.gg/25gYPdre9q" class="social-link" target="_blank"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links"><li><a href="#">Roster</a></li><li><a href="#">Join</a></li><li><a href="#">Shop</a></li></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Support</h3>
+                <ul class="footer-links"><li><a href="https://discord.gg/25gYPdre9q" target="_blank">Contact</a></li></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <form><input type="email" placeholder="your@email.com" style="background:#222; border:1px solid #e10600; padding:0.7rem; border-radius:30px; width:100%; color:white;"></form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 N2XT · all rights reserved</p>
+            <div class="footer-partners"><span class="badge-primary">DEFENDR</span> <span class="badge-primary">KAIL store</span> <span class="badge-primary">N2XT</span></div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile navigation toggle
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('show');
+                });
+                
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('show');
+                    });
+                });
+            }
+
+            // Active link highlighting
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            if (currentPage.includes('index') || currentPage === '') {
+                document.getElementById('nav-home')?.classList.add('active');
+            } else if (currentPage.includes('roster')) {
+                document.getElementById('nav-roster')?.classList.add('active');
+            } else if (currentPage.includes('join')) {
+                document.getElementById('nav-join')?.classList.add('active');
+            } else if (currentPage.includes('shop')) {
+                document.getElementById('nav-shop')?.classList.add('active');
+            } else if (currentPage.includes('games')) {
+                document.getElementById('nav-games')?.classList.add('active');
+            } else if (currentPage.includes('about')) {
+                document.getElementById('nav-about')?.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

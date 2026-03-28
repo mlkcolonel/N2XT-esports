@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About N2XT - Our Story & Mission</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== N2XT ESPORTS THEME - BLACK/RED ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black-100: #000000;
+            --black-90:  #0a0a0a;
+            --black-80:  #111111;
+            --black-70:  #1a1a1a;
+            --black-60:  #222222;
+            --black-50:  #2a2a2a;
+            --red-100: #ff0000;
+            --red-90:  #e10600;
+            --red-80:  #ff1a1a;
+            --red-70:  #ff3333;
+            --red-60:  #ff4d4d;
+            --red-50:  #ff6666;
+            --accent-dark: #330000;
+            --bg-dark: var(--black-90);
+            --card-bg: var(--black-60);
+            --border-red: rgba(225, 6, 0, 0.3);
+            --glow-red: 0 0 12px rgba(225, 6, 0, 0.7);
+            --text-light: #ffffff;
+            --text-dim: #cccccc;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--black-90);
+            color: var(--text-light);
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 70% 10%, rgba(225,6,0,0.02) 0%, transparent 30%);
+        }
+
+        /* ===== UNIFIED NAVIGATION STYLES ===== */
+        .main-nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--red-90);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 8px rgba(225,6,0,0.5);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .nav-logo:hover {
+            text-shadow: 0 0 12px var(--red-90);
+            transform: scale(1.02);
+        }
+
+        .logo-icon {
+            color: var(--red-90);
+            font-size: 2rem;
+        }
+
+        .logo-red {
+            color: var(--red-90);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #cccccc;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--red-90);
+            border-bottom-color: var(--red-90);
+        }
+
+        .nav-link:hover i {
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: var(--red-90);
+            border-bottom-color: var(--red-90);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-toggle:hover {
+            color: var(--red-90);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #000000 0%, #1a0000 100%);
+            position: relative;
+            padding: 4rem 1rem;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--red-90), transparent);
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(225, 6, 0, 0.7);
+            color: white;
+        }
+
+        .text-red {
+            color: var(--red-90);
+        }
+
+        .hero-subtitle {
+            color: #f0f0f0;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+            text-shadow: 0 0 8px var(--red-90);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--red-90);
+            margin: 0.5rem auto 0;
+            box-shadow: 0 0 8px red;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-gray {
+            color: #cccccc;
+        }
+
+        /* Story Grid */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .story-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--red-90), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            transform: translateX(-50%);
+            background: var(--red-90);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-left: 1rem;
+            border: 1px solid rgba(225, 6, 0, 0.2);
+        }
+
+        .timeline-content h3 {
+            color: var(--red-80);
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content p {
+            color: #bbbbbb;
+        }
+
+        .stats-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(225, 6, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--red-80);
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--red-90);
+        }
+
+        .stat-label {
+            color: #cccccc;
+            margin-top: 0.5rem;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(225, 6, 0, 0.2);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(225, 6, 0, 0.3);
+            border-color: var(--red-80);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--red-90);
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            color: #bbbbbb;
+        }
+
+        /* Leadership Grid */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .leader-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(225, 6, 0, 0.2);
+        }
+
+        .leader-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(225, 6, 0, 0.3);
+            border-color: var(--red-80);
+        }
+
+        .leader-image {
+            height: 180px;
+            background: linear-gradient(135deg, var(--red-90) 0%, #330000 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .leader-info {
+            padding: 1.5rem;
+        }
+
+        .leader-info h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .leader-role {
+            color: var(--red-80);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .leader-bio {
+            color: #bbbbbb;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .leader-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .leader-social a {
+            color: white;
+            background: rgba(225, 6, 0, 0.2);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+            border: 1px solid rgba(225, 6, 0, 0.3);
+        }
+
+        .leader-social a:hover {
+            background: var(--red-90);
+            transform: translateY(-3px);
+        }
+
+        /* Sponsors Grid */
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .sponsor-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(225, 6, 0, 0.2);
+        }
+
+        .sponsor-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--red-80);
+        }
+
+        .sponsor-logo {
+            font-size: 3rem;
+            color: var(--red-90);
+            margin-bottom: 1rem;
+        }
+
+        .sponsor-logo img {
+            max-width: 100px;
+            max-height: 80px;
+            object-fit: contain;
+        }
+
+        .sponsor-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            color: white;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid var(--red-90);
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 40px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--red-90);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--red-80);
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px var(--red-90);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--red-90);
+        }
+
+        .btn-secondary:hover {
+            background: var(--red-90);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .main-footer {
+            background: #050000;
+            padding: 3rem 2rem 1rem;
+            border-top: 2px solid var(--red-90);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-col h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--red-80);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-col p {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--red-90);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: #ffffff;
+            font-size: 1.3rem;
+            transition: var(--transition);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(225, 6, 0, 0.1);
+            border: 1px solid rgba(225, 6, 0, 0.3);
+        }
+
+        .social-link:hover {
+            color: var(--red-90);
+            transform: translateY(-3px);
+            border-color: var(--red-90);
+        }
+
+        .newsletter-form {
+            margin-top: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--black-70);
+            border: 1px solid rgba(225, 6, 0, 0.3);
+            border-radius: 40px;
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--red-90);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(225, 6, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: #888;
+        }
+
+        .footer-partners {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge-primary {
+            background: rgba(225, 6, 0, 0.2);
+            color: #ff8080;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--red-90);
+        }
+
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.98);
+                position: absolute;
+                top: 70px;
+                left: 0;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                border-bottom: 2px solid var(--red-90);
+                backdrop-filter: blur(10px);
+            }
+            .nav-menu.show {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-cta {
+                padding: 2rem;
+            }
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact-buttons .btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                <span>N<span class="logo-red">2</span>XT</span>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" id="nav-home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="roster.html" class="nav-link" id="nav-roster">
+                    <i class="fas fa-users"></i>
+                    <span>Team</span>
+                </a>
+                <a href="join.html" class="nav-link" id="nav-join">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Join</span>
+                </a>
+                <a href="shop.html" class="nav-link" id="nav-shop">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Shop</span>
+                </a>
+                <a href="games.html" class="nav-link" id="nav-games">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Games</span>
+                </a>
+                <a href="about.html" class="nav-link active" id="nav-about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                ABOUT <span class="text-red">N2XT</span>
+            </h1>
+            <p class="hero-subtitle">
+                The next generation of competitive gaming excellence since 2025
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Our Story</h2>
+                    <div class="story-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025</div>
+                            <div class="timeline-content">
+                                <h3>Foundation</h3>
+                                <p>N2XT was founded by Malek Boughzala & Badis Gallas with a vision to revolutionize competitive gaming in Tunisia and beyond.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025</div>
+                            <div class="timeline-content">
+                                <h3>Our Games</h3>
+                                <p>We compete across Rocket League, Fortnite & eFootball with some of the best players in the region.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="stats-card">
+                        <div class="stat-number" id="playerCount">0</div>
+                        <div class="stat-label">Professional Players</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stat-number" id="staffCount">0</div>
+                        <div class="stat-label">Staff Members</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stat-number" id="gameCount">0</div>
+                        <div class="stat-label">Competitive Titles</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Mission & Values</h2>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Excellence</h3>
+                    <p>Striving for peak performance in every competition, pushing the boundaries of what's possible in competitive gaming.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Innovation</h3>
+                    <p>Constantly evolving strategies, training methods, and technology to stay ahead of the competition.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Integrity</h3>
+                    <p>Competing with honor, sportsmanship, and respect for opponents, fans, and the gaming community.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h3>Community</h3>
+                    <p>Building and supporting the gaming community through events, content, and positive engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Leadership Team</h2>
+            <p class="text-center text-gray" style="margin-bottom: 3rem;">The visionaries behind N2XT's success</p>
+            
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image"><i class="fas fa-user-tie"></i></div>
+                    <div class="leader-info">
+                        <h3>Malek Boughzala & Badis Gallas</h3>
+                        <div class="leader-role">Founders & Owners</div>
+                        <p class="leader-bio">They founded N2XT Esports in 2025 with a clear vision: to build a competitive and innovative organization focused on talent development and high-level performance.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="leader-info">
+                        <h3>Mouadh Bawweb</h3>
+                        <div class="leader-role">CEO</div>
+                        <p class="leader-bio">They lead the organization as CEO with strong leadership and determination, shaping the strategic vision, overseeing operations, and driving long-term growth and success.
+</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image"><i class="fas fa-chart-line"></i></div>
+                    <div class="leader-info">
+                        <h3>Rayen Maghri</h3>
+                        <div class="leader-role">Manager</div>
+                        <p class="leader-bio">They manage the team with organization and leadership, coordinating players and staff, ensuring smooth operations, and supporting the team’s performance and success.
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Sponsors</h2>
+            <p class="text-center text-gray" style="margin-bottom: 3rem;">Proudly partnered with industry leaders</p>
+            
+            <div class="sponsors-grid">
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="defendr logo.webp" alt="DEFENDR" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-shield-alt\'></i>'">
+                    </div>
+                    <h3>DEFENDR</h3>
+                </div>
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="kailstore.webp" alt="KAIL store" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-store\'></i>'">
+                    </div>
+                    <h3>KAIL store</h3>
+                </div>
+                <div class="sponsor-card">
+                    <div class="sponsor-logo"><i class="fas fa-keyboard"></i></div>
+                    <h3>Coming Soon</h3>
+                </div>
+                <div class="sponsor-card">
+                    <div class="sponsor-logo"><i class="fas fa-tint"></i></div>
+                    <h3>Coming Soon</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-cta">
+                <h2 style="font-family: 'Orbitron', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Get in Touch</h2>
+                <p class="text-gray" style="margin-bottom: 1rem;">Interested in partnership, sponsorship, or media inquiries? Contact our team.</p>
+                <div class="contact-buttons">
+                    <a href="mailto:contact@n2xt-esports.com" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-file-alt"></i> Sponsorship Deck
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>N2XT Esports</h3>
+                <p>next generation.</p>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@n2xt.esports.officiel?_r=1&_t=ZS-946TliUThZt" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://x.com/N2XTesports" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/n2xt.esports?igsh=MXZ1aTNtYzdqcTVzZg==" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@n2xt.esports?si=N1YOvna_wObVAomg" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://discord.gg/25gYPdre9q" class="social-link" target="_blank"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links"><li><a href="#">Roster</a></li><li><a href="#">Join</a></li><li><a href="#">Shop</a></li></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Support</h3>
+                <ul class="footer-links"><li><a href="https://discord.gg/25gYPdre9q" target="_blank">Contact</a></li></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <form><input type="email" placeholder="your@email.com" style="background:#222; border:1px solid #e10600; padding:0.7rem; border-radius:30px; width:100%; color:white;"></form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 N2XT · all rights reserved</p>
+            <div class="footer-partners"><span class="badge-primary">DEFENDR</span> <span class="badge-primary">KAIL store</span> <span class="badge-primary">N2XT</span></div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile navigation toggle
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('show');
+                });
+                
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('show');
+                    });
+                });
+            }
+
+            // Active link highlighting
+            const currentPage = window.location.pathname.split('/').pop() || 'about.html';
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.getElementById('nav-about')?.classList.add('active');
+
+            // Counter animation
+            function animateCounter(element, target) {
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        element.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(current);
+                    }
+                }, 40);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        if (id === 'playerCount') animateCounter(entry.target, 12);
+                        if (id === 'staffCount') animateCounter(entry.target, 6);
+                        if (id === 'gameCount') animateCounter(entry.target, 3);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.getElementById('playerCount') && observer.observe(document.getElementById('playerCount'));
+            document.getElementById('staffCount') && observer.observe(document.getElementById('staffCount'));
+            document.getElementById('gameCount') && observer.observe(document.getElementById('gameCount'));
+
+            // Animation au scroll pour les cartes
+            const cards = document.querySelectorAll('.value-card, .leader-card, .sponsor-card');
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease-out';
+                scrollObserver.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

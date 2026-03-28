@@ -1,0 +1,13 @@
+n2xt-esports/
+├── index.html          # Home Page
+├── roster.html         # Roster Page
+├── join.html           # Join Page
+├── shop.html           # Shop Page
+├── games.html          # Games Page
+├── tweaks.html         # Tweaks Page
+├── about.html          # About Page
+├── style.css           # Main CSS Theme
+├── script.js           # Main JavaScript
+└── assets/
+    ├── icons/
+    └── images/
